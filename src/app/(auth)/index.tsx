@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Alert, StyleSheet, View, AppState, TextInput, Button } from "react-native";
+import {
+  Alert,
+  StyleSheet,
+  View,
+  AppState,
+  TextInput,
+  Button,
+} from "react-native";
 import { supabase } from "~/src/lib/supabase";
 
 // Tells Supabase Auth to continuously refresh the session automatically if
@@ -14,7 +21,7 @@ AppState.addEventListener("change", (state) => {
   }
 });
 
-export default function Auth() {
+const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -54,6 +61,7 @@ export default function Auth() {
           value={email}
           placeholder="email@address.com"
           autoCapitalize={"none"}
+					className="border border-slate-600 rounded-md"
         />
       </View>
       <View style={styles.verticallySpaced}>
@@ -63,6 +71,7 @@ export default function Auth() {
           secureTextEntry={true}
           placeholder="Password"
           autoCapitalize={"none"}
+					className="border border-slate-600 rounded-md"
         />
       </View>
       <View style={[styles.verticallySpaced, styles.mt20]}>
@@ -81,7 +90,9 @@ export default function Auth() {
       </View>
     </View>
   );
-}
+};
+
+export default Auth;
 
 const styles = StyleSheet.create({
   container: {
