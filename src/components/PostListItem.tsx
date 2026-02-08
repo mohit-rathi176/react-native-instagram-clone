@@ -8,7 +8,7 @@ interface PostProps {
 
 const PostListItem = ({ post }: PostProps) => {
 	return (
-		<View className="bg-white flex-1">
+		<View className="bg-white flex-1 rounded-md">
 			{/* Header */}
 			<View className="p-2 flex-row items-center gap-2">
 				<Image src={post.user.image_url} className="w-[42] aspect-square rounded-full" />
